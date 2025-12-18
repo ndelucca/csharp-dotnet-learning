@@ -28,7 +28,7 @@ cd csharp-dotnet-learning
 dotnet run --project src/UserManagement.API
 ```
 
-API available at `https://localhost:5001` | Swagger UI at `/swagger`
+API available at `http://<your-ip>:7000` | Swagger UI at `/swagger`
 
 ## Installation
 
@@ -103,17 +103,17 @@ Create `appsettings.Production.json`:
 
 ```bash
 # Create user
-curl -X POST https://localhost:5001/api/users \
+curl -X POST http://localhost:7000/api/users \
   -H "Content-Type: application/json" \
   -d '{"username":"john","email":"john@example.com","password":"Password123!","firstName":"John","lastName":"Doe"}'
 
 # Login
-curl -X POST https://localhost:5001/api/auth/login \
+curl -X POST http://localhost:7000/api/auth/login \
   -H "Content-Type: application/json" \
   -d '{"username":"john","password":"Password123!"}'
 
 # Use token for authenticated requests
-curl -X GET https://localhost:5001/api/users \
+curl -X GET http://localhost:7000/api/users \
   -H "Authorization: Bearer <token>"
 ```
 
